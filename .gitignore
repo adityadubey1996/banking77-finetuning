@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# training scratch, not worth versioning
+ckpt/
+*.zip
+
+# the adapter itself IS committed (45MB) so the repo is runnable as-is

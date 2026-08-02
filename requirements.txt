@@ -1,0 +1,7 @@
+# Versions this actually ran on (Colab, 2 Aug 2026). Newer usually works;
+# these are recorded so a future breakage is diagnosable.
+torch>=2.0
+transformers>=5.0        # v5 renamed from_pretrained's torch_dtype -> dtype
+datasets>=4.0            # v5 dropped loading scripts; notebook handles both
+peft>=0.20
+accelerate>=1.0
