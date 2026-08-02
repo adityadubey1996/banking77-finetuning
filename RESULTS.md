@@ -36,8 +36,12 @@ goes to zero.
 
 ## Where it still gets things wrong
 
-Most of the residual errors are cases where the label taxonomy itself is ambiguous rather than
-cases where the model is confused:
+22 errors out of 300. Every single confused pair appears exactly once, which is worth noting on its
+own: there is no systematic failure mode, no pair of intents the model reliably mixes up. The
+errors are scattered one-offs.
+
+Most of them are cases where the label taxonomy itself is ambiguous rather than cases where the
+model is confused:
 
 | customer message | gold label | predicted |
 |---|---|---|
@@ -53,6 +57,10 @@ transfers take" being labelled as a complaint about a transfer not arriving is a
 a practical ceiling on accuracy that no amount of extra training fixes, and it suggests the more
 useful next move is merging or clarifying the overlapping intents rather than reaching for a bigger
 model.
+
+The scattering matters for what you'd do next. A model with one dominant confusion pair is worth
+more training data on that pair. A model with 22 unique one-off errors, most of them on genuinely
+ambiguous inputs, is close to the ceiling this label set allows.
 
 ## Things that broke along the way
 
